@@ -4,6 +4,9 @@
 #include <unordered_map>
 #include <string>
 
+/**
+ * \brief Universal chip interface implementation for the branded "cool card" card.
+ */
 class CoolCard : public IUniversalChip
 {
 public:

@@ -25,7 +25,12 @@ add_library(cards STATIC ${SOURCES})
 target_include_directories(cards PUBLIC "./include")
 
 add_custom_target(documentation
-	COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cards.conf)
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+	COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cards.conf
+	)
+
+
+add_dependencies(cards documentation)
 
 if(WITH_TESTS)
 	enable_testing()

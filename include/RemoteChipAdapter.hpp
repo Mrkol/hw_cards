@@ -4,16 +4,17 @@
 
 
 /**
- * \brief Adapts a virtual remote chip to the provided API interface.
+ * \brief Adapts a virtual remote chip to the universal chip interface.
  * \details Each method call is forwarded to a server for further processing.
- *          this is just an example for this API's usage.
+ *          This is just an example for this API's usage, 
+ *          so no implementation is provided.
  */
 class RemoteChipAdapter : public IUniversalChip
 {
 public:
-	virtual size_t GetFreeSpace() = 0;
-	virtual uint8_t* AddDataSection(std::string flag, size_t size) = 0;
-	virtual uint8_t* GetData(std::string flag) = 0;
+	virtual size_t GetFreeSpace() override;
+	virtual uint8_t* AddDataSection(std::string flag, size_t size) override;
+	virtual uint8_t* GetData(std::string flag) override;
 
 private:
 	//std::shared_ptr<ServerConnection> connection_;
