@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <string>
 
 
 /**
@@ -12,7 +13,7 @@ public:
 	/**
 	 * \brief Accesses the cardholder's name.
 	 */
-	virtual const std::string& GetHolderName() = 0;
+	virtual std::string GetHolderName() = 0;
 
 	/**
 	 * \brief Queries for account balance.

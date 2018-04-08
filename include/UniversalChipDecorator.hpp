@@ -17,10 +17,8 @@ public:
 	explicit UniversalChipDecorator(std::shared_ptr<IUniversalChip> controlled);
 
 	virtual std::size_t GetFreeSpace() override;
-	virtual uint8_t* AddDataSection(std::string flag, std::size_t size) override;
-	virtual uint8_t* GetData(std::string flag) override;
-
-	virtual ~UniversalChipDecorator() = 0;
+	virtual uint8_t* AddDataSection(const std::string& flag, std::size_t size) override;
+	virtual uint8_t* GetDataSection(const std::string& flag) override;
 
 private:
 	std::shared_ptr<IUniversalChip> controlled_;

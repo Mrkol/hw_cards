@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <string>
 #include "ICreditCardAccess.hpp"
 
 
@@ -23,16 +24,16 @@ public:
 	/**
 	 * \brief Deposits money to the account.
 	 */
-	virtual void Deposit(uint64_t amount) override = 0;
+	virtual void Deposit(uint64_t amount) = 0;
 
 	/**
 	 * \brief Accesses the cardholder's name.
 	 */
-	virtual const std::string& GetHolderName() = 0;
+	virtual std::string GetHolderName() override = 0;
 
 
 	/**
 	 * \brief Queries for account balance.
 	 */
-	virtual uint64_t Query() override = 0;
+	virtual uint64_t QueryBalance() override = 0;
 };

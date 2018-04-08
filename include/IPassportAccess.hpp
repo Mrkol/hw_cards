@@ -4,9 +4,10 @@
 #include <string>
 
 /**
- * \brief Describes the functionality of a digital passport
+ * \brief Describes the functionality of a digital passport.
+ *        Provided by another company. 
  */
-class IPassport
+class IPassportAccess
 {
 public:
 	/**

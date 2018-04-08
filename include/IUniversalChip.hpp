@@ -22,10 +22,11 @@ public:
 	 * \brief Creates a named data section with the specified size
 	 *        and returns a pointer to the start of the data block.
 	 */
-	virtual uint8_t* AddDataSection(std::string flag, size_t size) = 0;
+	virtual uint8_t* AddDataSection(const std::string& flag, size_t size) = 0;
 
 	/**
-	 * \brief Returns a pointer to the specified data section. 
+	 * \brief Returns a pointer to the specified data section, if it exists.
+	 *        Nullptr otherwise.
 	 */
-	virtual uint8_t* GetData(std::string flag) = 0;
+	virtual uint8_t* GetDataSection(const std::string& flag) = 0;
 };

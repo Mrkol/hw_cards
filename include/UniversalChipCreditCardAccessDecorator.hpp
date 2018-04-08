@@ -14,10 +14,10 @@ public:
 	explicit UniversalChipCreditCardAccessDecorator(
 		std::shared_ptr<IUniversalChip> controlled);
 
-	virtual size_t GetFreeSpace() override;
-	virtual uint8_t* AddDataSection(std::string flag, size_t size) override;
-	virtual uint8_t* GetData(std::string flag) override;
-
-	virtual const std::string& GetHolderName() override;
+	virtual std::string GetHolderName() override;
 	virtual uint64_t QueryBalance() override;
+
+private:
+	static const std::string NAME_FLAG;
+	static const std::string BALANCE_FLAG;
 };
