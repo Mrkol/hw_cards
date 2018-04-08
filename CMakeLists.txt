@@ -14,3 +14,18 @@ if(DEBUG)
 else(DEBUG)
 	set(CMAKE_BUILD_TYPE Release)
 endif(DEBUG)
+
+find_package(Doxygen REQUIRED)
+
+
+file(GLOB_RECURSE SOURCES . src/*.cpp)
+
+
+add_library(cards STATIC ${SOURCES})
+target_include_directories(cards PUBLIC "./include")
+
+set(docks ${CMAKE_SOURCE_DIR})
+configure_file(${CMAKE_SOURCE_DIR}/doxygen.conf.in ${CMAKE_CURRENT_BINARY_DIR}/doxygen.conf)
+add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doxygen.conf)
+
+
