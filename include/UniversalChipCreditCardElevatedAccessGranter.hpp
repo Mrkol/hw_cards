@@ -13,7 +13,7 @@ class UniversalChipCreditCardElevatedAccessGranter final
 {
 public:
 	explicit UniversalChipCreditCardElevatedAccessGranter(
-		std::string connectionInformation);
+		const std::string& connectionInformation);
 
 	std::unique_ptr<UniversalChipCreditCardElevatedAccessDecorator>
 		GrantElevatedAccess(std::shared_ptr<IUniversalChip> controlled);

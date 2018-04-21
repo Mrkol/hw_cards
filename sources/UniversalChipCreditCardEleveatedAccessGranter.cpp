@@ -3,7 +3,7 @@
 
 UniversalChipCreditCardElevatedAccessGranter::
 	UniversalChipCreditCardElevatedAccessGranter(
-		std::string connectionInformation)
+		const std::string& connectionInformation)
 {
 	//Connect and authorize	
 }

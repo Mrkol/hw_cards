@@ -13,8 +13,8 @@ class RemoteChipAdapter : public IUniversalChip
 {
 public:
 	virtual size_t GetFreeSpace() override;
-	virtual uint8_t* AddDataSection(std::string flag, size_t size) override;
-	virtual uint8_t* GetData(std::string flag) override;
+	virtual uint8_t* AddDataSection(const std::string& flag, size_t size) override;
+	virtual uint8_t* GetData(const std::string& flag) override;
 
 private:
 	//std::shared_ptr<ServerConnection> connection_;
